@@ -24,6 +24,10 @@ import '../../features/customer/profile/screens/change_pass.dart';
 import '../../features/customer/profile/screens/help_and_support.dart';
 import '../../features/customer/profile/screens/profile.dart';
 import '../../features/customer/profile/screens/security.dart';
+import '../../features/customer/second_booking/confirm.dart';
+import '../../features/customer/second_booking/explore_barbar_two.dart';
+import '../../features/customer/second_booking/form_detail.dart';
+import '../../features/customer/second_booking/select_date.dart';
 import '../../features/parent/presentation/parent_screen.dart';
 import '../../features/splash/splash_screen.dart';
 
@@ -59,6 +63,10 @@ class AppRoutes {
     RouteNames.serviceMapViewScreen: (context) =>  ServiceMapViewScreen(),
     RouteNames.requestStatusScreen: (context) =>  RequestStatusScreen(),
     RouteNames.arrivalStatusScreen: (context) =>  ArrivalStatusScreen(),
+    RouteNames.bookingCalendarScreen: (context) =>  BookingCalendarScreen(),
+    RouteNames.serviceProviderDetailMapScreen: (context) =>  ServiceProviderDetailMapScreen(),
+    RouteNames.bookingConfirmationForm: (context) =>  BookingConfirmationForm(),
+    RouteNames.bookingSummaryScreen: (context) =>  BookingSummaryScreen(),
 
   };
 }

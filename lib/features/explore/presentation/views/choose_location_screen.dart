@@ -21,93 +21,95 @@ class ChooseLocationScreen extends StatelessWidget {
       ),
 
       body: SafeArea(
-        child: Column(
-          children: [
-
-            /// MAP IMAGE
-            Container(
-              height: 240.h,
-              width: double.infinity,
-              decoration: const BoxDecoration(color: Colors.white),
-              child: Image.asset(
-                'assets/images/map1.png',
-                fit: BoxFit.cover,
-              ),
-            ),
-            SizedBox(height: 16.h),
-
-            /// REST OF CONTENT
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-
-                    /// SEARCH BAR
-                    TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16.r),
-                        ),
-                        hintText: 'Search....',
-                        hintStyle: TextStyle(
-                          color: Colors.grey.shade800,
-                          fontSize: 14.sp,
-                        ),
-                        prefixIcon: Icon(
-                          Icons.search,
-                          color: Colors.grey.shade800,
-                          size: 24.sp,
-                        ),
-                        filled: true,
-                        fillColor: Colors.grey.shade50,
-                      ),
-                    ),
-
-                    SizedBox(height: 20.h),
-
-                    /// HEADING
-                    Text(
-                      "Popular Location",
-                      style: TextStyle(
-                        fontSize: 20.sp,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black,
-                      ),
-                    ),
-
-                    SizedBox(height: 16.h),
-
-                    /// LIST SECTION
-                    Expanded(
-                      child: ListView(
-                        children: [
-                          _locationTile(
-                            title: "Los Angeles",
-                            subtitle: "California, United States",
-                            distance: "3.21 KM",
-                          ),
-                          _divider(),
-                          _locationTile(
-                            title: "San Francisco",
-                            subtitle: "2118 Thornridge Cir. Syracuse...",
-                            distance: "2.24 KM",
-                          ),
-                          _divider(),
-                          _locationTile(
-                            title: "New York",
-                            subtitle: "2118 Thornridge Cir. Syracuse...",
-                            distance: "2.84 KM",
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+          
+              /// MAP IMAGE
+              Container(
+                height: 240.h,
+                width: double.infinity,
+                decoration: const BoxDecoration(color: Colors.white),
+                child: Image.asset(
+                  'assets/images/map1.png',
+                  fit: BoxFit.cover,
                 ),
               ),
-            ),
-          ],
+              SizedBox(height: 16.h),
+          
+              /// REST OF CONTENT
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+          
+                      /// SEARCH BAR
+                      TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(16.r),
+                          ),
+                          hintText: 'Search....',
+                          hintStyle: TextStyle(
+                            color: Colors.grey.shade800,
+                            fontSize: 14.sp,
+                          ),
+                          prefixIcon: Icon(
+                            Icons.search,
+                            color: Colors.grey.shade800,
+                            size: 24.sp,
+                          ),
+                          filled: true,
+                          fillColor: Colors.grey.shade50,
+                        ),
+                      ),
+          
+                      SizedBox(height: 20.h),
+          
+                      /// HEADING
+                      Text(
+                        "Popular Location",
+                        style: TextStyle(
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
+                        ),
+                      ),
+          
+                      SizedBox(height: 16.h),
+          
+                      /// LIST SECTION
+                      Expanded(
+                        child: ListView(
+                          children: [
+                            _locationTile(
+                              title: "Los Angeles",
+                              subtitle: "California, United States",
+                              distance: "3.21 KM",
+                            ),
+                            _divider(),
+                            _locationTile(
+                              title: "San Francisco",
+                              subtitle: "2118 Thornridge Cir. Syracuse...",
+                              distance: "2.24 KM",
+                            ),
+                            _divider(),
+                            _locationTile(
+                              title: "New York",
+                              subtitle: "2118 Thornridge Cir. Syracuse...",
+                              distance: "2.84 KM",
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
