@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/constant/route_names.dart';
+
 class BookingSummaryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class BookingSummaryScreen extends StatelessWidget {
                 ],
               ),
             ),
-            _buildBookNowButton(),
+            _buildBookNowButton(context),
           ],
         ),
       ),
@@ -244,7 +246,7 @@ class BookingSummaryScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildBookNowButton() {
+  Widget _buildBookNowButton(BuildContext context) {
     return Align(
       alignment: Alignment.bottomCenter,
       child: Container(
@@ -263,7 +265,9 @@ class BookingSummaryScreen extends StatelessWidget {
           width: double.infinity,
           height: 56,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, RouteNames.parentScreen);
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.black,
               shape: RoundedRectangleBorder(

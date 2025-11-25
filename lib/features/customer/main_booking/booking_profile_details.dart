@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:theshortkutbran/core/constant/route_names.dart';
+import 'package:theshortkutbran/features/customer/second_booking/select_date.dart';
 
+import '../booking/presentation/view_model/booking_provider.dart';
 import 'explore_barbar.dart';
 
 class BarberProfileScreen extends StatefulWidget {
@@ -258,10 +261,20 @@ class _BarberProfileScreenState extends State<BarberProfileScreen> {
                 height: 56,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ServiceMapViewScreen()),
-                    );
+                    final index = context.read<BookingProvider>().selectedIndex;
+
+                    if (index == 0) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ServiceMapViewScreen()),
+                      );
+                    } else {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => BookingCalendarScreen()),
+                      );
+                    }
+
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black,

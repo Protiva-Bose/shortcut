@@ -18,6 +18,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: CustomServiceAppBar(
         title: 'Setting',
         backgroundColor: Colors.transparent,
@@ -43,6 +44,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 16.sp,
+                        color: Colors.black
                       ),
                     ),
                     Row(
@@ -243,6 +245,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 16.sp,
+                        color: Colors.red
+
                     ),
                   ),
                 ),

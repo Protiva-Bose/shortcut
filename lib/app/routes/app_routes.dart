@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:theshortkutbran/features/customer/booking/presentation/booking_screen.dart';
+import 'package:theshortkutbran/features/explore/presentation/views/choose_location_screen.dart';
+import 'package:theshortkutbran/features/explore/presentation/views/find_a_barber_screen.dart';
 import '../../core/constant/route_names.dart';
 import '../../features/auth/new_pass.dart';
 import '../../features/auth/phone_number_verify.dart';
@@ -54,6 +56,8 @@ class AppRoutes {
     RouteNames.newPassword: (context) =>  NewPassword(),
     RouteNames.serviceSelection: (context) =>  ServiceSelection(),
     RouteNames.userSelection: (context) =>  UserSelection(),
+    RouteNames.chooseLocation: (context) =>  ChooseLocationScreen(),
+    RouteNames.findABarber: (context) =>  FindABarberScreen(),
     RouteNames.phoneNumberVerify: (context) =>  PhoneNumberVerify(),
     RouteNames.otpScreen: (context) =>  OtpScreen(),
     RouteNames.barberProfileScreen: (context) =>  BarberProfileScreen(),

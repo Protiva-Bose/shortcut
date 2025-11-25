@@ -27,6 +27,7 @@ class MenuListTile extends StatelessWidget {
           style: TextStyle(
             fontWeight: FontWeight.w500,
             fontSize: 16.sp,
+              color: Colors.black
           ),
         ),
         trailing: Icon(

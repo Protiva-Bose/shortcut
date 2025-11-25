@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
+import 'package:theshortkutbran/features/explore/presentation/views/explore_screen.dart';
 import '../../auth/sign_in.dart';
 import '../../customer/booking/presentation/booking_screen.dart';
+import '../../customer/booking/presentation/screen/booking_option_screen.dart';
 import '../../customer/home/presentation/view/screen/home_flow.dart';
 import '../../customer/main_booking/booking_profile_details.dart';
 import '../../customer/profile/profile_screen.dart';
@@ -78,9 +80,8 @@ class _ParentScreenState extends State<ParentScreen>
       builder: (__, navParentProvider, child) {
         final List<Widget> pages = [
           const HomeFlow(),
-          const HomeFlow(),
-         //  BarberProfileScreen(),
-          BookingCalendarScreen(),
+          const ExploreScreen(),
+          BookingOptionScreen(),
           const ProfileScreen(),
         ];
 
