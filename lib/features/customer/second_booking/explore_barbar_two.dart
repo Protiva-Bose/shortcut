@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../review/review_first.dart';
 import 'form_detail.dart';
 
 class ServiceProviderDetailMapScreen extends StatelessWidget {
@@ -225,7 +226,12 @@ class ServiceProviderDetailMapScreen extends StatelessWidget {
                       width: double.infinity,
                       height: 56,
                       child: OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ServiceRatingForm()),
+                          );
+                        },
                         style: OutlinedButton.styleFrom(
                           side: const BorderSide(color: Colors.black, width: 2),
                           shape: RoundedRectangleBorder(

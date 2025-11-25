@@ -24,6 +24,8 @@ import '../../features/customer/profile/screens/change_pass.dart';
 import '../../features/customer/profile/screens/help_and_support.dart';
 import '../../features/customer/profile/screens/profile.dart';
 import '../../features/customer/profile/screens/security.dart';
+import '../../features/customer/review/review_first.dart';
+import '../../features/customer/review/review_second.dart';
 import '../../features/customer/second_booking/confirm.dart';
 import '../../features/customer/second_booking/explore_barbar_two.dart';
 import '../../features/customer/second_booking/form_detail.dart';
@@ -67,6 +69,8 @@ class AppRoutes {
     RouteNames.serviceProviderDetailMapScreen: (context) =>  ServiceProviderDetailMapScreen(),
     RouteNames.bookingConfirmationForm: (context) =>  BookingConfirmationForm(),
     RouteNames.bookingSummaryScreen: (context) =>  BookingSummaryScreen(),
+    RouteNames.serviceRatingForm: (context) =>  ServiceRatingForm(),
+    RouteNames.writeReviewModal: (context) =>  WriteReviewModal(),
 
   };
 }
