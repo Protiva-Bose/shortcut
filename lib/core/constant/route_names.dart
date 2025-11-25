@@ -25,4 +25,8 @@ class RouteNames {
   static const String serviceMapViewScreen = '/serviceMapViewScreen';
   static const String requestStatusScreen = '/requestStatusScreen';
   static const String arrivalStatusScreen = '/arrivalStatusScreen';
+  static const String bookingCalendarScreen = '/bookingCalendarScreen';
+  static const String serviceProviderDetailMapScreen = '/serviceProviderDetailMapScreen';
+  static const String bookingConfirmationForm = '/bookingConfirmationForm';
+  static const String bookingSummaryScreen = '/bookingSummaryScreen';
 }

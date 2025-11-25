@@ -7,6 +7,7 @@ import '../../customer/booking/presentation/booking_screen.dart';
 import '../../customer/home/presentation/view/screen/home_flow.dart';
 import '../../customer/main_booking/booking_profile_details.dart';
 import '../../customer/profile/profile_screen.dart';
+import '../../customer/second_booking/select_date.dart';
 
 class ParentScreen extends StatefulWidget {
   const ParentScreen({super.key});
@@ -78,7 +79,8 @@ class _ParentScreenState extends State<ParentScreen>
         final List<Widget> pages = [
           const HomeFlow(),
           const HomeFlow(),
-           BarberProfileScreen(),
+         //  BarberProfileScreen(),
+          BookingCalendarScreen(),
           const ProfileScreen(),
         ];
 
