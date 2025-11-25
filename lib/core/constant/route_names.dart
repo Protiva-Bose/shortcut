@@ -18,4 +18,11 @@ class RouteNames {
   static const String onboardingScreen = '/onboardingScreen';
   static const String serviceSelection = '/serviceSelection';
   static const String userSelection = '/userSelection';
+  static const String phoneNumberVerify = '/phoneNumberVerify';
+  static const String otpScreen = '/otpScreen';
+  static const String barberProfileScreen = '/barberProfileScreen';
+  static const String barberGalleryScreen = '/barberGalleryScreen';
+  static const String serviceMapViewScreen = '/serviceMapViewScreen';
+  static const String requestStatusScreen = '/requestStatusScreen';
+  static const String arrivalStatusScreen = '/arrivalStatusScreen';
 }
