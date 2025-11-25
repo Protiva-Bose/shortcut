@@ -20,4 +20,11 @@ class RouteNames {
   static const String userSelection = '/userSelection';
   static const String chooseLocation = '/chooseLocation';
   static const String findABarber = '/findABarber';
+  static const String phoneNumberVerify = '/phoneNumberVerify';
+  static const String otpScreen = '/otpScreen';
+  static const String barberProfileScreen = '/barberProfileScreen';
+  static const String barberGalleryScreen = '/barberGalleryScreen';
+  static const String serviceMapViewScreen = '/serviceMapViewScreen';
+  static const String requestStatusScreen = '/requestStatusScreen';
+  static const String arrivalStatusScreen = '/arrivalStatusScreen';
 }

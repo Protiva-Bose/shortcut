@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../app/widgets/appbar/simple_appbar.dart';
+import '../../../../core/constant/route_names.dart';
 
-class FindABarberScreen extends StatelessWidget {
+class FindABarberScreen extends StatefulWidget {
   const FindABarberScreen({super.key});
+
+  @override
+  State<FindABarberScreen> createState() => _FindABarberScreenState();
+}
+
+class _FindABarberScreenState extends State<FindABarberScreen> {
+  int selectedIndex = -1;
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +46,7 @@ class FindABarberScreen extends StatelessWidget {
             /// CONTENT AREA
             Expanded(
               child: Padding(
-                padding:
-                EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -65,6 +71,10 @@ class FindABarberScreen extends StatelessWidget {
                       child: ListView(
                         children: [
                           serviceTile(
+                            context: context,
+
+                            index: 0,
+                            isSelected: selectedIndex == 0,
                             image: "assets/images/user1.png",
                             name: "Aaron Schmeler",
                             price: "\$22.00",
@@ -72,10 +82,13 @@ class FindABarberScreen extends StatelessWidget {
                             rating: "4.3",
                             experience: "2 Year Experiments",
                           ),
-
                           SizedBox(height: 12.h),
 
                           serviceTile(
+                            context: context,
+
+                            index: 1,
+                            isSelected: selectedIndex == 1,
                             image: "assets/images/user2.png",
                             name: "Abraham Ledner",
                             price: "\$24.00",
@@ -83,10 +96,13 @@ class FindABarberScreen extends StatelessWidget {
                             rating: "4.7",
                             experience: "6 Year Experiments",
                           ),
-
                           SizedBox(height: 12.h),
 
                           serviceTile(
+                            context: context,
+
+                            index: 2,
+                            isSelected: selectedIndex == 2,
                             image: "assets/images/user3.png",
                             name: "Abraham Ledner",
                             price: "\$20.00",
@@ -94,10 +110,12 @@ class FindABarberScreen extends StatelessWidget {
                             rating: "4.7",
                             experience: "4 Year Experiments",
                           ),
-
                           SizedBox(height: 12.h),
 
                           serviceTile(
+                            context: context,
+                            index: 3,
+                            isSelected: selectedIndex == 3,
                             image: "assets/images/user4.png",
                             name: "Gladys Lily",
                             price: "\$25.00",
@@ -118,8 +136,11 @@ class FindABarberScreen extends StatelessWidget {
     );
   }
 
-  /// SERVICE TILE WIDGET
+  /// SERVICE TILE WIDGET WITH SELECTION
   Widget serviceTile({
+    required context,
+    required int index,
+    required bool isSelected,
     required String image,
     required String name,
     required String price,
@@ -129,13 +150,21 @@ class FindABarberScreen extends StatelessWidget {
   }) {
     return GestureDetector(
       onTap: () {
-        // TODO navigate to barber details screen
+        setState(() {
+          selectedIndex = index;
+        });
+
+        Navigator.pushNamed(context, RouteNames.barberProfileScreen);
       },
       child: Container(
         padding: EdgeInsets.all(10.w),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(14.r),
+          border: Border.all(
+            color: isSelected ? Colors.black : Colors.transparent,
+            width: 2,
+          ),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.shade200,
@@ -200,9 +229,7 @@ class FindABarberScreen extends StatelessWidget {
 
                   Row(
                     children: [
-                      Icon(Icons.star,
-                          color: Colors.amber, size: 16.sp),
-
+                      Icon(Icons.star, color: Colors.amber, size: 16.sp),
                       SizedBox(width: 5.w),
 
                       Text(

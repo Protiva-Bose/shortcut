@@ -5,7 +5,9 @@ import 'package:provider/provider.dart';
 import 'package:theshortkutbran/features/explore/presentation/views/explore_screen.dart';
 import '../../auth/sign_in.dart';
 import '../../customer/booking/presentation/booking_screen.dart';
+import '../../customer/booking/presentation/screen/booking_option_screen.dart';
 import '../../customer/home/presentation/view/screen/home_flow.dart';
+import '../../customer/main_booking/booking_profile_details.dart';
 import '../../customer/profile/profile_screen.dart';
 
 class ParentScreen extends StatefulWidget {
@@ -78,7 +80,7 @@ class _ParentScreenState extends State<ParentScreen>
         final List<Widget> pages = [
           const HomeFlow(),
           const ExploreScreen(),
-          const BookingScreen(),
+          BookingOptionScreen(),
           const ProfileScreen(),
         ];
 

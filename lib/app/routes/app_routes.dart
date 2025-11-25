@@ -4,6 +4,8 @@ import 'package:theshortkutbran/features/explore/presentation/views/choose_locat
 import 'package:theshortkutbran/features/explore/presentation/views/find_a_barber_screen.dart';
 import '../../core/constant/route_names.dart';
 import '../../features/auth/new_pass.dart';
+import '../../features/auth/phone_number_verify.dart';
+import '../../features/auth/selection/enter_otp.dart';
 import '../../features/auth/selection/service_selection.dart';
 import '../../features/auth/selection/user_selection.dart';
 import '../../features/auth/sign_in.dart';
@@ -11,6 +13,11 @@ import '../../features/auth/sign_up.dart';
 import '../../features/customer/booking/presentation/screen/details_order.dart';
 import '../../features/customer/home/presentation/view/screen/home_flow.dart';
 import '../../features/customer/home/presentation/view/screens/service_details.dart';
+import '../../features/customer/main_booking/barbar_ison_the_way.dart';
+import '../../features/customer/main_booking/booking_profile_details.dart';
+import '../../features/customer/main_booking/explore_barbar.dart';
+import '../../features/customer/main_booking/see_all.dart';
+import '../../features/customer/main_booking/send_request.dart';
 import '../../features/customer/onboarding/onboarding_screen.dart';
 import '../../features/customer/profile/profile_screen.dart';
 import '../../features/customer/profile/screens/change_pass.dart';
@@ -45,6 +52,13 @@ class AppRoutes {
     RouteNames.userSelection: (context) =>  UserSelection(),
     RouteNames.chooseLocation: (context) =>  ChooseLocationScreen(),
     RouteNames.findABarber: (context) =>  FindABarberScreen(),
+    RouteNames.phoneNumberVerify: (context) =>  PhoneNumberVerify(),
+    RouteNames.otpScreen: (context) =>  OtpScreen(),
+    RouteNames.barberProfileScreen: (context) =>  BarberProfileScreen(),
+    RouteNames.barberGalleryScreen: (context) =>  BarberGalleryScreen(),
+    RouteNames.serviceMapViewScreen: (context) =>  ServiceMapViewScreen(),
+    RouteNames.requestStatusScreen: (context) =>  RequestStatusScreen(),
+    RouteNames.arrivalStatusScreen: (context) =>  ArrivalStatusScreen(),
 
   };
 }

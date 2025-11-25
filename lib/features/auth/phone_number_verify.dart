@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:theshortkutbran/app/widgets/textfield/custom_textFiels.dart';
 import 'package:theshortkutbran/core/constant/route_names.dart';
+import 'package:theshortkutbran/features/auth/selection/enter_otp.dart';
 import 'package:theshortkutbran/features/parent/presentation/parent_screen.dart';
 
-class SignIn extends StatefulWidget {
-  const SignIn({super.key});
+class PhoneNumberVerify extends StatefulWidget {
+  const PhoneNumberVerify({super.key});
 
   @override
-  State<SignIn> createState() => _SignInState();
+  State<PhoneNumberVerify> createState() => _PhoneNumberVerifyState();
 }
 
-class _SignInState extends State<SignIn> {
+class _PhoneNumberVerifyState extends State<PhoneNumberVerify> {
   bool obscure1 = true;
   bool obscure2 = true;
 
@@ -65,51 +66,12 @@ class _SignInState extends State<SignIn> {
                   child: Column(
                     children: [
                       CustomTextField(
-                        hintText: 'example@gmail.com',
-                        text: 'Email',
-                      ),
-                      Align(
-                        alignment: AlignmentGeometry.topLeft,
-                        child: Text(
-                          'Password',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 15.sp,
-                            color: Colors.grey.shade800,
-                          ),
-                        ),
+                        hintText: '+88 01XXXXXXXX',
+                        text: 'Phone Number',
                       ),
 
-                      SizedBox(height: 8.h),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.grey.shade200,
-                          borderRadius: BorderRadius.circular(30.r),
-                        ),
-                        child: TextFormField(
-                          controller: confirmController,
-                          obscureText: obscure2,
-                          decoration: InputDecoration(
-                            hintText: 'Enter your password',
-                            hintStyle: TextStyle(color: Colors.grey.shade600),
-                            border: InputBorder.none,
-                            contentPadding: EdgeInsets.symmetric(
-                              horizontal: 16.w,
-                              vertical: 10.h,
-                            ),
-                            suffixIcon: GestureDetector(
-                              onTap: () => setState(() => obscure2 = !obscure2),
-                              child: Icon(
-                                obscure2
-                                    ? Icons.visibility_off_outlined
-                                    : Icons.visibility_outlined,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 25.h),
+
+                      SizedBox(height: 10.h),
                       SizedBox(
                         height: 42.h,
                         child: ElevatedButton(
@@ -120,28 +82,22 @@ class _SignInState extends State<SignIn> {
                             ),
                           ),
                           onPressed: () {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ParentScreen(),
-                              ),
-                            );
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => OtpScreen()));
                           },
                           child: Center(
                             child: Text(
-                              'Continue with Email',
+                              'Continue with Number',
                               style: TextStyle(fontSize: 15.sp),
                             ),
                           ),
                         ),
                       ),
                       SizedBox(height: 25.h),
-                      Row(
-                        spacing: 8,
+                      Row(spacing: 8,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image.asset('assets/images/Line.png', scale: 3.4),
+                          Image.asset('assets/images/Line.png',scale: 3.4,),
                           Text(
                             'Or continue with',
                             style: TextStyle(
@@ -150,7 +106,7 @@ class _SignInState extends State<SignIn> {
                               color: Colors.grey.shade400,
                             ),
                           ),
-                          Image.asset('assets/images/Line.png', scale: 3.4),
+                          Image.asset('assets/images/Line.png',scale: 3.4,),
                         ],
                       ),
                       SizedBox(height: 15.h),
@@ -161,38 +117,31 @@ class _SignInState extends State<SignIn> {
                         children: [
                           Container(
                             decoration: BoxDecoration(
-                              border: Border.all(color: Colors.grey.shade400),
-                              borderRadius: BorderRadius.circular(30.r),
+                                border: Border.all(
+                                    color: Colors.grey.shade400
+                                ),
+                                borderRadius: BorderRadius.circular(30.r)
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(20.0),
-                              child: Icon(Icons.apple, size: 25.sp),
+                              child: Icon(Icons.apple,size: 25.sp,),
                             ),
                           ),
-                          Image.asset(
-                            'assets/images/Google Button.png',
-                            scale: 3.5,
-                          ),
-                          GestureDetector(
-                            onTap: (){
-                              Navigator.pushNamed(context, RouteNames.phoneNumberVerify);
-                            },
-                            child: Image.asset(
-                              'assets/icons/Phone Button.png',
-                              scale: 3.5,
-                            ),
-                          ),
+                          Image.asset('assets/images/Google Button.png',scale: 3.5,)
                         ],
                       ),
                       SizedBox(height: 15.h),
                       GestureDetector(
-                        onTap: () {
+                        onTap: (){
                           Navigator.pushNamed(context, RouteNames.signUp);
                         },
                         child: RichText(
                           text: TextSpan(
                             text: "Don’t have an account? ",
-                            style: TextStyle(color: Colors.grey, fontSize: 15),
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 15,
+                            ),
                             children: [
                               TextSpan(
                                 text: "Sign Up",
@@ -205,7 +154,8 @@ class _SignInState extends State<SignIn> {
                             ],
                           ),
                         ),
-                      ),
+                      )
+
                     ],
                   ),
                 ),
