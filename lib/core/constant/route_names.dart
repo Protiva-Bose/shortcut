@@ -18,4 +18,6 @@ class RouteNames {
   static const String onboardingScreen = '/onboardingScreen';
   static const String serviceSelection = '/serviceSelection';
   static const String userSelection = '/userSelection';
+  static const String chooseLocation = '/chooseLocation';
+  static const String findABarber = '/findABarber';
 }

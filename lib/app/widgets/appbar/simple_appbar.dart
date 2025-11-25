@@ -29,7 +29,7 @@ class CustomServiceAppBar extends StatelessWidget implements PreferredSizeWidget
       elevation: 0,
 
       leading: Padding(
-        padding: EdgeInsets.only(left: 4.w),
+        padding: EdgeInsets.only(left: 8.w, top: 4.h),
         child: GestureDetector(
           onTap: () => Navigator.pop(context),
           child: Container(

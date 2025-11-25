@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
+import 'package:theshortkutbran/features/explore/presentation/views/explore_screen.dart';
 import '../../auth/sign_in.dart';
 import '../../customer/booking/presentation/booking_screen.dart';
 import '../../customer/home/presentation/view/screen/home_flow.dart';
@@ -76,7 +77,7 @@ class _ParentScreenState extends State<ParentScreen>
       builder: (__, navParentProvider, child) {
         final List<Widget> pages = [
           const HomeFlow(),
-          const HomeFlow(),
+          const ExploreScreen(),
           const BookingScreen(),
           const ProfileScreen(),
         ];
