@@ -11,7 +11,9 @@ import '../../features/auth/selection/user_selection.dart';
 import '../../features/auth/sign_in.dart';
 import '../../features/auth/sign_up.dart';
 import '../../features/customer/booking/presentation/screen/details_order.dart';
+import '../../features/customer/home/presentation/next_payment.dart';
 import '../../features/customer/home/presentation/view/screen/home_flow.dart';
+import '../../features/customer/home/presentation/view/screens/packages_add_screen.dart';
 import '../../features/customer/home/presentation/view/screens/service_details.dart';
 import '../../features/customer/main_booking/barbar_ison_the_way.dart';
 import '../../features/customer/main_booking/booking_profile_details.dart';
@@ -71,6 +73,8 @@ class AppRoutes {
     RouteNames.bookingSummaryScreen: (context) =>  BookingSummaryScreen(),
     RouteNames.serviceRatingForm: (context) =>  ServiceRatingForm(),
     RouteNames.writeReviewModal: (context) =>  WriteReviewModal(),
+    RouteNames.basicPackageScreen: (context) =>  BasicPackageScreen(),
+    RouteNames.paymentScreen: (context) =>  PaymentScreen(),
 
   };
 }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../app/widgets/appbar/simple_appbar.dart';
+import '../home/presentation/payment.dart';
+import '../main_booking/send_request.dart';
 import '../review/review_first.dart';
 import 'form_detail.dart';
 
@@ -7,6 +10,13 @@ class ServiceProviderDetailMapScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomServiceAppBar(
+        title: 'Find A Barber',
+        backgroundColor: Colors.white,
+        titleColor: Colors.black,
+        iconColor: Colors.black,
+        leadingContainerColor: Colors.grey.shade300,
+      ),
       body: SafeArea(
         child: Stack(
           children: [
@@ -197,7 +207,8 @@ class ServiceProviderDetailMapScreen extends StatelessWidget {
                       width: double.infinity,
                       height: 56,
                       child: ElevatedButton(
-                        onPressed: () {
+                        onPressed: ()  {
+
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => BookingConfirmationForm()),

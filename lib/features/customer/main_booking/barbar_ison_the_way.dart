@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:theshortkutbran/features/parent/presentation/parent_screen.dart';
 
+import '../../../app/widgets/appbar/simple_appbar.dart';
+import '../home/presentation/payment.dart';
+
 class ArrivalStatusScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomServiceAppBar(
+        title: 'Location',
+        backgroundColor: Colors.white,
+        titleColor: Colors.black,
+        iconColor: Colors.black,
+        leadingContainerColor: Colors.grey.shade300,
+      ),
       body: SafeArea(
         child: Stack(
           children:[
@@ -129,11 +139,18 @@ class ArrivalStatusScreen extends StatelessWidget {
                       width: double.infinity,
                       height: 56,
                       child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => ParentScreen()),
+                        onPressed: () async {
+                          final selectedCoupon = await showDialog(
+                            context: context,
+                            builder: (context) => CouponPopup(),
                           );
+
+                          print("User selected coupon index: $selectedCoupon");
+
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(builder: (context) => RequestStatusScreen()),
+                          // );
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black,

@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 
+import '../../../app/widgets/appbar/simple_appbar.dart';
 import '../../../core/constant/route_names.dart';
+import '../home/presentation/payment.dart';
 
 class BookingSummaryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
+      appBar: CustomServiceAppBar(
+        title: 'Form Detail',
         backgroundColor: Colors.white,
-        elevation: 0,
-        leading: GestureDetector(
-          onTap: () {},
-          child: const Icon(Icons.arrow_back_ios, color: Colors.black),
-        ),
+        titleColor: Colors.black,
+        iconColor: Colors.black,
+        leadingContainerColor: Colors.grey.shade300,
       ),
       body: SafeArea(
         child: Stack(
@@ -265,8 +266,18 @@ class BookingSummaryScreen extends StatelessWidget {
           width: double.infinity,
           height: 56,
           child: ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, RouteNames.parentScreen);
+            onPressed: () async {
+              final selectedCoupon = await showDialog(
+                context: context,
+                builder: (context) => CouponPopup(),
+              );
+
+              print("User selected coupon index: $selectedCoupon");
+
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => RequestStatusScreen()),
+              // );
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.black,

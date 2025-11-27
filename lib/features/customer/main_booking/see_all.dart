@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../app/widgets/appbar/simple_appbar.dart';
 import 'explore_barbar.dart';
 
 class BarberGalleryScreen extends StatefulWidget {
@@ -22,6 +23,13 @@ class _BarberGalleryScreenState extends State<BarberGalleryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomServiceAppBar(
+        title: 'Our Best Work',
+        backgroundColor: Colors.white,
+        titleColor: Colors.black,
+        iconColor: Colors.black,
+        leadingContainerColor: Colors.grey.shade300,
+      ),
       backgroundColor: Colors.white,
       body: Stack(
         children: [

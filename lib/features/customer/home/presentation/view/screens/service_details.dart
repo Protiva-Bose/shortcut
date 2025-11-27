@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:theshortkutbran/core/constant/route_names.dart';
 
 import '../../../../../../app/widgets/appbar/simple_appbar.dart';
 import '../widgets/search_bar_widget.dart';
@@ -15,6 +16,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: CustomServiceAppBar(
       title: "Services",
       backgroundColor: Colors.black,
@@ -22,8 +24,6 @@ class _ServiceDetailsState extends State<ServiceDetails> {
       iconColor: Colors.white,
       leadingContainerColor: Colors.white10,
     ),
-
-    backgroundColor: Colors.black,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -43,73 +43,77 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                   ),
                 ),
                 SizedBox(height: 5.h,),
-                Row(
-                  mainAxisAlignment:MainAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/icons/service1.png',
-                            scale: 3.8,
-                          ),
-                          SizedBox(height: 5),
-                          Text(
-                            'Basic\nPackage',
-                            style: TextStyle(
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
+                GestureDetector(onTap: (){
+                  Navigator.pushNamed(context, RouteNames.basicPackageScreen);
+                },
+                  child: Row(
+                    mainAxisAlignment:MainAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              'assets/icons/service1.png',
+                              scale: 3.8,
                             ),
-                          ),
-                        ],
+                            SizedBox(height: 5),
+                            Text(
+                              'Basic\nPackage',
+                              style: TextStyle(
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    SizedBox(width: 25),
-                    SizedBox(
+                      SizedBox(width: 25),
+                      SizedBox(
 
-                      child: Column( crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/images/a2.png',
-                            scale: 3.8,
-                          ),
-                          SizedBox(height: 4),
-                          Text(
-                            'Standard\nPackage',
-                            style: TextStyle(
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
+                        child: Column( crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              'assets/images/a2.png',
+                              scale: 3.8,
                             ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(width: 25),
-                    SizedBox(
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            'assets/images/a44.png',
-                            scale: 3.8,
-                          ),
-                          SizedBox(height: 5),
-                          Text(
-                            'Premium\nPackage ',
-                            style: TextStyle(
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
+                            SizedBox(height: 4),
+                            Text(
+                              'Standard\nPackage',
+                              style: TextStyle(
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                      SizedBox(width: 25),
+                      SizedBox(
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              'assets/images/a44.png',
+                              scale: 3.8,
+                            ),
+                            SizedBox(height: 5),
+                            Text(
+                              'Premium\nPackage ',
+                              style: TextStyle(
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 Divider(),
                 SizedBox(height: 10.h,),
