@@ -36,7 +36,7 @@ class _FindABarberScreenState extends State<FindABarberScreen> {
               width: double.infinity,
               decoration: const BoxDecoration(color: Colors.white),
               child: Image.asset(
-                'assets/images/map1.png',
+                'assets/images/map.png',
                 fit: BoxFit.cover,
               ),
             ),

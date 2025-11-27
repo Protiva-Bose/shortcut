@@ -109,7 +109,7 @@ class ExploreScreen extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(16.r),
                     ),
-                    child: Image.asset('assets/images/map1.png', fit: BoxFit.cover,),
+                    child: Image.asset('assets/images/map.png', fit: BoxFit.cover,),
                   ),
                 ),
                 SizedBox(height: 40.h,),

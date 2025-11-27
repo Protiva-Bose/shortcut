@@ -31,97 +31,99 @@ class _BookingOptionScreenState extends State<BookingOptionScreen> {
       ),
 
       body: SafeArea(
-        child: Column(
-          children: [
-
-            /// MAP IMAGE
-            Container(
-              height: 240.h,
-              width: double.infinity,
-              decoration: const BoxDecoration(color: Colors.white),
-              child: Image.asset(
-                'assets/images/map1.png',
-                fit: BoxFit.cover,
-              ),
-            ),
-            SizedBox(height: 16.h),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal:16.0),
-              child: Align(
-                alignment: AlignmentGeometry.centerLeft,
-                child: Text(
-                  'Booking Option',
-                  style: TextStyle(
-                      fontSize: 22.sp,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black
-                  ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+          
+              /// MAP IMAGE
+              Container(
+                height: 240.h,
+                width: double.infinity,
+                decoration: const BoxDecoration(color: Colors.white),
+                child: Image.asset(
+                  'assets/images/map.png',
+                  fit: BoxFit.cover,
                 ),
               ),
-            ),
-
-            /// ------------------ BOOKING OPTIONS ADDED HERE ------------------
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Booking Option",
+              SizedBox(height: 16.h),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal:16.0),
+                child: Align(
+                  alignment: AlignmentGeometry.centerLeft,
+                  child: Text(
+                    'Booking Option',
                     style: TextStyle(
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.bold,
+                        fontSize: 22.sp,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black
                     ),
                   ),
-                  SizedBox(height: 14.h),
-
-                  buildBookingOption(
-                    index: 0,
-                    icon: Icons.location_on_outlined,
-                    title: "On-Demand Barber",
-                  ),
-
-                  buildBookingOption(
-                    index: 1,
-                    icon: Icons.calendar_today_outlined,
-                    title: "Schedule a Barber",
-                  ),
-                ],
+                ),
               ),
-            ),
-            SizedBox(height: 20.h),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, RouteNames.findABarber);
-                },
-                child: Container(
-                  height: 48.h,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(16.r),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.location_on_outlined, size: 20.w, color: Colors.black,),
-                      Text(
-                        'Continue',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w600,
-                        ),
+          
+              /// ------------------ BOOKING OPTIONS ADDED HERE ------------------
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Booking Option",
+                      style: TextStyle(
+                        fontSize: 20.sp,
+                        fontWeight: FontWeight.bold,
                       ),
-                    ],
+                    ),
+                    SizedBox(height: 14.h),
+          
+                    buildBookingOption(
+                      index: 0,
+                      icon: Icons.location_on_outlined,
+                      title: "On-Demand Barber",
+                    ),
+          
+                    buildBookingOption(
+                      index: 1,
+                      icon: Icons.calendar_today_outlined,
+                      title: "Schedule a Barber",
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 5.h),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, RouteNames.findABarber);
+                  },
+                  child: Container(
+                    height: 48.h,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(16.r),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.location_on_outlined, size: 20.w, color: Colors.black,),
+                        Text(
+                          'Continue',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:theshortkutbran/app/widgets/appbar/simple_appbar.dart';
 import 'package:theshortkutbran/core/constant/route_names.dart';
 import 'package:theshortkutbran/features/customer/second_booking/select_date.dart';
 
@@ -14,7 +15,8 @@ class BarberProfileScreen extends StatefulWidget {
 class _BarberProfileScreenState extends State<BarberProfileScreen> {
   bool _isExpanded = false;
 
-  final String _longDescription = 'Ultricies arcu venenatis in lorem faucibus lobortis at. East odio varius nisl congue aliquam nunc est sit pull convallis magna. Est scelerisque dignissim non nibh. Nullam vitae mauris eu dolor auctor feugiat vel id mi. Sed euismod elit in urna mollis, vel lacinia justo consectetur.';
+  final String _longDescription =
+      'Ultricies arcu venenatis in lorem faucibus lobortis at. East odio varius nisl congue aliquam nunc est sit pull convallis magna. Est scelerisque dignissim non nibh. Nullam vitae mauris eu dolor auctor feugiat vel id mi. Sed euismod elit in urna mollis, vel lacinia justo consectetur.';
   final List<String> _galleryImages = [
     'https://placehold.co/200x200/cccccc/white?text=Work+1',
     'https://placehold.co/200x200/dddddd/white?text=Work+2',
@@ -25,6 +27,13 @@ class _BarberProfileScreenState extends State<BarberProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomServiceAppBar(
+        title: 'Details',
+        backgroundColor: Colors.white,
+        titleColor: Colors.black,
+        iconColor: Colors.black,
+        leadingContainerColor: Colors.grey.shade300,
+      ),
       body: Stack(
         children: [
           Container(
@@ -94,7 +103,9 @@ class _BarberProfileScreenState extends State<BarberProfileScreen> {
                             children: <Widget>[
                               const CircleAvatar(
                                 radius: 24,
-                                backgroundImage: AssetImage('assets/images/booking_user.png'),
+                                backgroundImage: AssetImage(
+                                  'assets/images/booking_user.png',
+                                ),
                               ),
                               const SizedBox(width: 15),
                               Expanded(
@@ -121,7 +132,11 @@ class _BarberProfileScreenState extends State<BarberProfileScreen> {
                               ),
                               Row(
                                 children: [
-                                  const Icon(Icons.star, color: Color(0xFFFFCC00), size: 18),
+                                  const Icon(
+                                    Icons.star,
+                                    color: Color(0xFFFFCC00),
+                                    size: 18,
+                                  ),
                                   const SizedBox(width: 4),
                                   Text(
                                     '4.3',
@@ -147,7 +162,9 @@ class _BarberProfileScreenState extends State<BarberProfileScreen> {
                           const SizedBox(height: 8),
                           RichText(
                             text: TextSpan(
-                              text: _isExpanded ? _longDescription : _longDescription.substring(0, 150) + '...',
+                              text: _isExpanded
+                                  ? _longDescription
+                                  : _longDescription.substring(0, 150) + '...',
                               style: const TextStyle(
                                 fontSize: 14,
                                 color: Colors.black54,
@@ -188,7 +205,10 @@ class _BarberProfileScreenState extends State<BarberProfileScreen> {
                               ),
                               GestureDetector(
                                 onTap: () {
-                                  Navigator.pushNamed(context, RouteNames.barberGalleryScreen);
+                                  Navigator.pushNamed(
+                                    context,
+                                    RouteNames.barberGalleryScreen,
+                                  );
                                 },
                                 child: const Text(
                                   'See All',
@@ -205,12 +225,13 @@ class _BarberProfileScreenState extends State<BarberProfileScreen> {
                           GridView.builder(
                             physics: const NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
-                            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2,
-                              crossAxisSpacing: 10,
-                              mainAxisSpacing: 10,
-                              childAspectRatio: 1.0,
-                            ),
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  crossAxisSpacing: 10,
+                                  mainAxisSpacing: 10,
+                                  childAspectRatio: 1.0,
+                                ),
                             itemCount: _galleryImages.length,
                             itemBuilder: (context, index) {
                               return ClipRRect(
@@ -224,7 +245,6 @@ class _BarberProfileScreenState extends State<BarberProfileScreen> {
                                       child: Center(
                                         child: Image.asset(
                                           'assets/images/booking_user.png',
-
                                         ),
                                       ),
                                     );
@@ -266,15 +286,18 @@ class _BarberProfileScreenState extends State<BarberProfileScreen> {
                     if (index == 0) {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ServiceMapViewScreen()),
+                        MaterialPageRoute(
+                          builder: (context) => ServiceMapViewScreen(),
+                        ),
                       );
                     } else {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => BookingCalendarScreen()),
+                        MaterialPageRoute(
+                          builder: (context) => BookingCalendarScreen(),
+                        ),
                       );
                     }
-
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black,
@@ -301,4 +324,3 @@ class _BarberProfileScreenState extends State<BarberProfileScreen> {
     );
   }
 }
-

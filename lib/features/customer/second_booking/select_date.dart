@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:theshortkutbran/core/constant/route_names.dart';
 
+import '../../../app/widgets/appbar/simple_appbar.dart';
+
 class BookingCalendarScreen extends StatefulWidget {
   @override
   _BookingCalendarScreenState createState() => _BookingCalendarScreenState();
@@ -282,6 +284,13 @@ Navigator.pushNamed(context, RouteNames.serviceProviderDetailMapScreen);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomServiceAppBar(
+        title: 'Barber Men Location',
+        backgroundColor: Colors.white,
+        titleColor: Colors.black,
+        iconColor: Colors.black,
+        leadingContainerColor: Colors.grey.shade300,
+      ),
       backgroundColor: Colors.white,
       body: Stack(
         children: [

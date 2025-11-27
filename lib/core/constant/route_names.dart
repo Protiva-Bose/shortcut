@@ -33,4 +33,6 @@ class RouteNames {
   static const String bookingSummaryScreen = '/bookingSummaryScreen';
   static const String serviceRatingForm = '/serviceRatingForm';
   static const String writeReviewModal = '/writeReviewModal';
+  static const String basicPackageScreen = '/basicPackageScreen';
+  static const String paymentScreen = '/paymentScreen';
 }

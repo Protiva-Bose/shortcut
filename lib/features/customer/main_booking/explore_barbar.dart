@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:theshortkutbran/features/customer/main_booking/send_request.dart';
 
+import '../../../app/widgets/appbar/simple_appbar.dart';
+import '../home/presentation/payment.dart';
+
 class ServiceMapViewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomServiceAppBar(
+        title: 'Find A Barber',
+        backgroundColor: Colors.white,
+        titleColor: Colors.black,
+        iconColor: Colors.black,
+        leadingContainerColor: Colors.grey.shade300,
+      ),
       body: SafeArea(
+
         child: Stack(
           children: [
             Container(
@@ -210,7 +221,8 @@ class ServiceMapViewScreen extends StatelessWidget {
                       width: double.infinity,
                       height: 56,
                       child: ElevatedButton(
-                        onPressed: () {
+
+                          onPressed: ()  {
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => RequestStatusScreen()),

@@ -275,7 +275,7 @@ class _HomeFlowState extends State<HomeFlow> {
             ),
             SizedBox(height: 10.h,),
             Container(
-                    height: 200.h,
+                    height: 220.h,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey.shade300, width: 1),
                       borderRadius: BorderRadius.circular(16.r),
@@ -322,14 +322,24 @@ class _HomeFlowState extends State<HomeFlow> {
                         Positioned(
                           left: 5.w,
                           right: 5.w,
-                          bottom: 15.h,
+
                           child: Padding(
                             padding: const EdgeInsets.only(top: 18.0),
                             child: Column(
                               children: [
-                                Image.asset(
-                                  'assets/images/map.png',
-                                  scale: 4,
+                                SizedBox(height: 10.h,),
+
+                                Padding(
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: SizedBox(
+                                    width: double.infinity,
+                                    height: 100.h,
+                                    child: Image.asset(
+                                      'assets/images/map.png',
+                                      scale: 4,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
                                 ),
 
                                 ListTile(

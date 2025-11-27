@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 
+import '../../../app/widgets/appbar/simple_appbar.dart';
 import 'barbar_ison_the_way.dart';
 
 class RequestStatusScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomServiceAppBar(
+        title: 'Send Request',
+        backgroundColor: Colors.white,
+        titleColor: Colors.black,
+        iconColor: Colors.black,
+        leadingContainerColor: Colors.grey.shade300,
+      ),
       body: SafeArea(
         child: SafeArea(
           child: Stack(

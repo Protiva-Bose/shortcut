@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../app/widgets/appbar/simple_appbar.dart';
 import '../../../core/constant/route_names.dart';
 
 class BookingConfirmationForm extends StatefulWidget {
@@ -16,13 +17,12 @@ class _BookingConfirmationFormState extends State<BookingConfirmationForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
+      appBar: CustomServiceAppBar(
+        title: 'Form Detail',
         backgroundColor: Colors.white,
-        elevation: 0,
-        leading: GestureDetector(
-          onTap: () {},
-          child: const Icon(Icons.arrow_back_ios, color: Colors.black),
-        ),
+        titleColor: Colors.black,
+        iconColor: Colors.black,
+        leadingContainerColor: Colors.grey.shade300,
       ),
       body: SafeArea(
         child: Stack(

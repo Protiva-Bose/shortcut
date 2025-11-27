@@ -9,6 +9,7 @@ class GradientBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
         toolbarHeight: 50.h,
         backgroundColor: Colors.black,
@@ -85,7 +86,6 @@ class GradientBackground extends StatelessWidget {
           ),
         ],
       ),
-      backgroundColor: Colors.transparent,
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
